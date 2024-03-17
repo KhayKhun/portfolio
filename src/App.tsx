@@ -1,42 +1,36 @@
-import './App.css'
-import {Canvas} from '@react-three/fiber'
-import {OrbitControls, PresentationControls, Stars} from '@react-three/drei'
-import { Mc } from './components/Mc';
-import { useState } from 'react';
-import NavBar from './components/NavBar';
+import "./App.css";
+import { Canvas} from "@react-three/fiber";
+import { PresentationControls, Stars } from "@react-three/drei";
+import { Mc } from "./components/Mc";
+import { useState } from "react";
+import NavBar from "./components/NavBar";
 
-          
+
 function App() {
-  // const coor = [-2,-1,0,1,2,3];
-  const [modelHeight,setModelHeight] = useState(0);
-  console.log(modelHeight);
-  const coor = [-2,-1,0];
+  const [modelHeight, setModelHeight] = useState(0);
   return (
     <div className="App">
-      <NavBar/>
-      <Canvas className="border border-black bg-gradient-to-b from-black to-slate-900 w-full h-full">
+      <NavBar />
+      <Canvas
+        className="border border-black bg-gradient-to-b from-black to-slate-900 w-full h-full"
+        camera={{
+          position: [0, 0, 5],
+          fov: 50,
+          near: 0.01,
+        }}
+      >
         <Stars />
         <ambientLight intensity={1.3} />
-        {coor.map((x) =>
-          coor.map((c) => {
-            return (
-              <mesh key={`${x}-${c}`} position={[x, c, 0]}>
-                <axesHelper />
-                <sphereGeometry args={[0.1]} />
-                <meshBasicMaterial color={"#000"} />
-              </mesh>
-            );
-          })
-        )}
-        <PresentationControls enabled global speed={5}>
-          <group position={[0, -modelHeight, 3]}>
+
+        <PresentationControls enabled global speed={5} polar={[0, 0.5]}>
+          <group position={[0, -modelHeight, 0]}>
+            <boxGeometry />
             <Mc setHeight={setModelHeight} />
           </group>
         </PresentationControls>
-        <OrbitControls/>
       </Canvas>
     </div>
   );
 }
 
-export default App
+export default App;

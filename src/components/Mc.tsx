@@ -55,7 +55,13 @@ export function Mc(props :any) {
     }
   }, [nodes]);
   return (
-    <group {...props} dispose={null} ref={groupRef} rotation-x={-1.8} rotation-z={0.9}>
+    <group
+      {...props}
+      dispose={null}
+      ref={groupRef}
+      rotation-x={-1.8}
+      rotation-z={0.9}
+    >
       <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"

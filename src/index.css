@@ -8,6 +8,10 @@ html,body{
   height: 200vh;
 }
 
+*{
+  touch-action: none;
+}
+
 @layer components{
   .App{
     @apply w-screen h-screen
