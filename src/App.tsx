@@ -1,9 +1,8 @@
 import './App.css'
 import {Canvas} from '@react-three/fiber'
-import {OrbitControls,Environment, PresentationControls, Sky, Stars} from '@react-three/drei'
+import {OrbitControls, PresentationControls, Stars} from '@react-three/drei'
 import { Mc } from './components/Mc';
 import { useState } from 'react';
-import { Vector3 } from 'three';
 import NavBar from './components/NavBar';
 
           
