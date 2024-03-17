@@ -6,8 +6,9 @@ https://github.com/pmndrs/gltfjsx/issues/238
 */
 
 import * as THREE from "three";
-import { useGLTF } from "@react-three/drei";
+import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
+import { useEffect, useRef } from "react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -35,9 +36,26 @@ type GLTFResult = GLTF & {
 };
 
 export function Mc(props :any) {
-  const { nodes, materials } = useGLTF("models/mc.glb") as GLTFResult;
+  const groupRef = useRef<THREE.Group>();
+  const { nodes,materials } = useGLTF("models/mc.glb") as GLTFResult;
+
+  const {animations} = useFBX("/animations/Floating.fbx");
+  animations[0].name = "Floating";
+
+  const { actions } = useAnimations(animations, groupRef);
+
+  useEffect(()=>{
+    actions["Floating"]?.reset().play();
+  },[])
+  useEffect(() => {
+    if (groupRef.current) {
+      const box = new THREE.Box3().setFromObject(groupRef.current);
+      const height = box.max.y - box.min.y;
+      props.setHeight(height);
+    }
+  }, [nodes]);
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={groupRef} rotation-x={-1.8} rotation-z={0.9}>
       <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
@@ -97,8 +115,12 @@ export function Mc(props :any) {
         geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
         material={materials.Wolf3D_Outfit_Footwear}
         skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
-        morphTargetDictionary={nodes.Wolf3D_Outfit_Footwear.morphTargetDictionary}
-        morphTargetInfluences={nodes.Wolf3D_Outfit_Footwear.morphTargetInfluences}
+        morphTargetDictionary={
+          nodes.Wolf3D_Outfit_Footwear.morphTargetDictionary
+        }
+        morphTargetInfluences={
+          nodes.Wolf3D_Outfit_Footwear.morphTargetInfluences
+        }
       />
       <skinnedMesh
         name="Wolf3D_Body"
@@ -109,7 +131,7 @@ export function Mc(props :any) {
         morphTargetInfluences={nodes.Wolf3D_Body.morphTargetInfluences}
       />
     </group>
-  )
+  );
 }
 
 useGLTF.preload('models/mc.glb')
