@@ -13,7 +13,7 @@ export function Github(props:any) {
   useFrame(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y -= 0.03;
-    //   groupRef.current.rotation.x -= 0.05;
+      groupRef.current.rotation.x -= 0.001;
     }
   });
   return (

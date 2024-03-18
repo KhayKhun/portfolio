@@ -43,7 +43,7 @@ function App() {
 
         <Mc setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
         <Blender position={[1, 0.8, 1.2]} />
-        <Github position={[1, 1, -1]} />
+        <Github position={[1.3, 1.3, -1]} />
         <Javascript position={[1, -1, -1]} />
         <Typescript position={[-1, 1, -1]} />
         <Tailwind position={[1, -1.3, 1]} />
