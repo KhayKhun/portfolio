@@ -1,6 +1,5 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars } from "@react-three/drei";
-import { Mc } from "./components/models/Mc";
 import { useState } from "react";
 import { Github } from "./components/models/Github";
 import { Blender } from "./components/models/Blender";
@@ -12,6 +11,7 @@ import { React } from "./components/models/React";
 import { Css } from "./components/models/Css";
 import { Html } from "./components/models/Html";
 import NavBar from "./components/NavBar";
+import { Avatar } from "./components/models/Avatar";
 
 function App() {
   const [modelHeight, setModelHeight] = useState(0);
@@ -33,7 +33,7 @@ function App() {
         <OrbitControls
           autoRotate
           enableDamping
-          autoRotateSpeed={3}
+          autoRotateSpeed={2}
           rotateSpeed={2}
           enableZoom={false}
           enablePan={false}
@@ -41,7 +41,8 @@ function App() {
         />
         <Lights />
 
-        <Mc setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
+        <Avatar setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
+
         <Blender position={[1, 0.8, 1.2]} />
         <Github position={[1.3, 1.3, -1]} />
         <Javascript position={[1, -1, -1]} />

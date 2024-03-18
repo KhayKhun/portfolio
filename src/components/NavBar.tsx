@@ -1,12 +1,13 @@
 import {
   CodeIcon,
+  FacebookIcon,
   FileDownloadIcon,
   GithubIcon,
   LeetcodeIcon,
   LinkedinIcon,
   XIcon,
 } from "../assets/Icons";
-// https://www.facebook.com/simpleyourweb
+
 const NavBar = () => {
   return (
     <div className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-cyan-400">
@@ -22,6 +23,9 @@ const NavBar = () => {
         </a>
         <a href="https://leetcode.com/KhayKhun/" target="blank">
           <LeetcodeIcon />
+        </a>
+        <a href="https://www.facebook.com/simpleyourweb" target="blank">
+          <FacebookIcon />
         </a>
         <a href="https://github.com/KhayKhun/portfolio" target="blank">
           <CodeIcon />
