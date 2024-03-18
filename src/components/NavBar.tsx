@@ -32,7 +32,7 @@ const NavBar = () => {
         </a>
       </div>
       <a
-        href="https://drive.google.com/uc?export=download&id=1vOcm6Mn3Y12KNhE1VC8A2CDPs3u6VB7E"
+        href="https://drive.google.com/uc?export=download&id=1TGK9aCf0mjPPBkgyM-vgXfekTlDhlUv3"
         className="z-10 fixed gap-2 flex sm:left-0 sm:-translate-x-[40%] sm:top-[50%] sm:-translate-y-[50%] sm:border-b-0 bg-white bg-opacity-10 p-2 sm:rounded-t-md sm:border-[0.1px] border-cyan-300 sm:rotate-90 top-0 left-[50%] -translate-x-[50%] border-t-0 rounded-b-md border-[0.1px]"
       >
         <FileDownloadIcon />
