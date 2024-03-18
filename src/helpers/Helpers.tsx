@@ -1,6 +1,7 @@
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, useHelper } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import { PerspectiveCamera } from "three";
+import { useRef } from "react";
+import { PerspectiveCamera, PointLightHelper } from "three";
 
 export function ShowCoordinates({coors}: {coors : number[]}) {
   {
@@ -28,4 +29,17 @@ export function Controls() {
 export function CameraHelper() {
   const camera = new PerspectiveCamera();
   return <cameraHelper args={[camera]} />;
+}
+
+export function Lights() {
+  const lightRef = useRef<any>();
+  useHelper(lightRef, PointLightHelper, 1, "yellow");
+  return (
+    <pointLight
+      intensity={200}
+      color={"cyan"}
+      position={[0, -6, 0]}
+      ref={lightRef}
+    />
+  );
 }
