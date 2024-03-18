@@ -48,12 +48,12 @@ export function Lights() {
         intensity={100}
         color={"#39ff14"}
         ref={lightRef1}
-        position={[0, -6, 0]}
+        position={[0, -8, 0]}
       />
       <pointLight
         intensity={50}
         color={"#ff0f0f"}
-        position={[4, 0, 0]}
+        position={[7, 0, 0]}
         ref={lightRef}
       />
     </>

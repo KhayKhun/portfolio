@@ -43,6 +43,7 @@ export function Mc(props :any) {
       ref={groupRef}
       rotation-x={-1.8}
       rotation-z={0.9}
+      position={props.position}
     >
       <primitive object={nodes.Hips} />
       <skinnedMesh
