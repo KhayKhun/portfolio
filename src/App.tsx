@@ -19,8 +19,8 @@ function App() {
         className="border border-black bg-gradient-to-b from-black to-slate-900 w-full h-full"
         camera={{
           position: [0, 0, 5],
-          fov: 50,
-          near: 0.01,
+          fov: 70,
+          near: 0,
         }}
       >
         <Stars />
