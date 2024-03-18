@@ -6,7 +6,7 @@ import { Blender } from "./models/Blender";
 import { Javascript } from "./models/Javascript";
 import { Typescript } from "./models/Typescript";
 import { Tailwind } from "./models/Tailwind";
-import { Lights } from "../helpers/Helpers";
+import { Lights } from "../assets/Helpers";
 import { React } from "./models/React";
 import { Css } from "./models/Css";
 import { Html } from "./models/Html";
@@ -20,7 +20,7 @@ const ThreeCanvas = () => {
     <Canvas
       className="border border-black bg-gradient-to-b from-[#000] to-[#150f1e] w-full h-full"
       camera={{
-        position: [0, 0, positionZ],
+        position: [0, -1, positionZ],
         fov: 40,
         near: 0.001,
       }}
