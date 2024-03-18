@@ -39,14 +39,21 @@ export function Mc(props :any) {
   const groupRef = useRef<THREE.Group>();
   const { nodes,materials } = useGLTF("models/mc.glb") as GLTFResult;
 
-  const {animations} = useFBX("/animations/Floating.fbx");
-  animations[0].name = "Floating";
+  // const {animations:fall} = useFBX("/animations/Falling.fbx");
+  // fall[0].name = "Falling";
 
-  const { actions } = useAnimations(animations, groupRef);
+  const {animations:float} = useFBX("/animations/Floating.fbx");
+  float[0].name = "Floating";
+
+  const { actions } = useAnimations(float, groupRef);
 
   useEffect(()=>{
     actions["Floating"]?.reset().play();
+    return () => {
+      actions["Floating"]?.reset();
+    }
   },[])
+
   useEffect(() => {
     if (groupRef.current) {
       const box = new THREE.Box3().setFromObject(groupRef.current);

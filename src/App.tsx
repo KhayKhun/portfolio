@@ -1,13 +1,27 @@
 import "./App.css";
 import { Canvas} from "@react-three/fiber";
-import { PresentationControls, Stars } from "@react-three/drei";
+import { OrbitControls, Stars, useHelper } from "@react-three/drei";
 import { Mc } from "./components/Mc";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import NavBar from "./components/NavBar";
+import { PointLightHelper } from "three";
+// import {useControls} from 'leva'
 
+function Lights(){
+  const lightRef = useRef<any>();
+  useHelper(lightRef, PointLightHelper, 1, "yellow");
+  return <pointLight intensity={200} color={'cyan'} position={[0, -6, 0]} ref={lightRef}/>;
+}
 
 function App() {
   const [modelHeight, setModelHeight] = useState(0);
+  // const {animation} = useControls({
+  //   animation :{
+  //     value : "Floating",
+  //     options : ["Falling","Floating"]
+  //   }
+  // })
+
   return (
     <div className="App">
       <NavBar />
@@ -20,14 +34,25 @@ function App() {
         }}
       >
         <Stars />
-        <ambientLight intensity={1.3} />
+        <ambientLight intensity={1} />
 
-        <PresentationControls enabled global speed={5} polar={[0, 0.5]}>
-          <group position={[0, -modelHeight, 0]}>
-            <boxGeometry />
-            <Mc setHeight={setModelHeight} />
-          </group>
-        </PresentationControls>
+        {/* <PresentationControls enabled global speed={5} polar={[0, 0.5]}> */}
+        <group position={[0, -modelHeight, 0]}>
+          <boxGeometry />
+          <Mc
+            setHeight={setModelHeight}
+            // animation={animation}
+          />
+        </group>
+        {/* </PresentationControls> */}
+        <OrbitControls
+          autoRotate // Enable auto rotation
+          enableDamping
+          autoRotateSpeed={1} // Set rotation speed
+          rotateSpeed={3}
+          enableZoom={false}
+        />
+        <Lights />
       </Canvas>
     </div>
   );
