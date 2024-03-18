@@ -15,14 +15,16 @@ import NavBar from "./components/NavBar";
 
 function App() {
   const [modelHeight, setModelHeight] = useState(0);
+  const positionZ = window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3.5;
+
   return (
     <div className="App">
-      <NavBar/>
+      <NavBar />
       <Canvas
         className="border border-black bg-gradient-to-b from-[#000] to-[#150f1e] w-full h-full"
         camera={{
-          position: [0, 0, 3.5],
-          fov: 60,
+          position: [0, 0, positionZ ],
+          fov: 40,
           near: 0.001,
         }}
       >
@@ -39,15 +41,15 @@ function App() {
         />
         <Lights />
 
-          <Mc setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
-          <Blender position={[1, 0.8, 1.2]} />
-          <Github position={[1, 1, -1]} />
-          <Javascript position={[1, -1, -1]} />
-          <Typescript position={[-1, 1, -1]} />
-          <Tailwind position={[1, -1.3, 1]} />
-          <React position={[-1, 0.2, 1]} />
-          <Css position={[-1.5, -1.2, -0.8]} />
-          <Html position={[1.8, 0.4, 1.2]} />
+        <Mc setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
+        <Blender position={[1, 0.8, 1.2]} />
+        <Github position={[1, 1, -1]} />
+        <Javascript position={[1, -1, -1]} />
+        <Typescript position={[-1, 1, -1]} />
+        <Tailwind position={[1, -1.3, 1]} />
+        <React position={[-1, 0.2, 1]} />
+        <Css position={[-1.5, -1.2, -0.8]} />
+        <Html position={[1.8, 0.4, 1.2]} />
       </Canvas>
     </div>
   );
