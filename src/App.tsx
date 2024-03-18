@@ -37,7 +37,7 @@ function App() {
           rotateSpeed={2}
           enableZoom={false}
           enablePan={false}
-          target={[0.2, 0.3, 0]}
+          target={[0.2, -0.2, 0]}
         />
         <Lights />
 

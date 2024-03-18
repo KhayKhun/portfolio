@@ -9,8 +9,8 @@ import {
 
 const NavBar = () => {
   return (
-    <div className="text-lg sm:text-2xl xl:text-3xl 2xl:text-4xl text-cyan-400">
-      <div className="z-10 fixed gap-3 flex sm:left-auto sm:bottom-auto sm:right-0 sm:flex-col sm:top-[50%] sm:-translate-y-[50%] sm:translate-x-0 sm:rounded-r-none sm:border-r-0 sm:border-b-[0.1px] bg-white bg-opacity-10 p-2 sm:rounded-l-md border-[0.1px] border-cyan-300 left-[50%] bottom-0 -translate-x-[50%] border-b-0 rounded-t-md">
+    <div className="text-xl sm:text-2xl xl:text-3xl 2xl:text-4xl text-cyan-400">
+      <div className=" z-10 fixed gap-3 flex sm:left-auto sm:bottom-auto sm:right-0 sm:flex-col sm:top-[50%] sm:-translate-y-[50%] sm:translate-x-0 sm:rounded-r-none sm:border-r-0 sm:border-b-[0.1px] bg-white bg-opacity-10 p-3 sm:rounded-l-md border-[0.1px] border-cyan-300 left-[50%] bottom-0 -translate-x-[50%] border-b-0 rounded-t-md">
         <div>
           <GithubIcon />
         </div>
