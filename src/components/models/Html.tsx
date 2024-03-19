@@ -7,7 +7,7 @@ import { GLTFResult } from "../../types/global";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
-export function Html(props:any) {
+export function HtmlModel(props:any) {
   const { nodes, materials } = useGLTF("models/html.glb") as GLTFResult;
   const groupRef = useRef<any>();
   useFrame(() => {

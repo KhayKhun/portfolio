@@ -2,18 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body{
-  margin: 0;
-  padding: 0;
-  height: 200vh;
-}
-
-*{
-  touch-action: none;
-}
-
 @layer components{
+  *{
+    @apply touch-none
+  }
+  html,body{
+    @apply p-0 m-0 h-[200vh]
+  }
   .App{
     @apply w-screen h-screen
+  }
+}
+
+.mono-font {
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.plause{
+  animation-name: plause;
+  animation-duration:0.8s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes plause{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
