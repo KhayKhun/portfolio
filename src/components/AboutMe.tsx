@@ -12,7 +12,7 @@ export default function AboutMe() {
         "Creating bugs since 2022.",
         "<a href='https://www.facebook.com/simpleyourweb'>Like my Facebook page.</a>",
       ],
-      typeSpeed: 30,
+      typeSpeed: 50,
       loop: true,
     });
 

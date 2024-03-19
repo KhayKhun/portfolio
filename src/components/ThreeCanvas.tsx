@@ -13,7 +13,7 @@ import { HtmlModel } from "./models/Html";
 import { Avatar } from "./models/Avatar";
 
 const _positionZ =
-  window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3.5;
+  window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3;
 
 const ThreeCanvas = () => {
   const [modelHeight, setModelHeight] = useState(0);
@@ -35,7 +35,7 @@ const ThreeCanvas = () => {
           enableDamping
           autoRotateSpeed={2}
           rotateSpeed={2}
-          enableZoom={true}
+          enableZoom={false}
           enablePan={false}
           target={[0.2, -0.2, 0]}
         />
