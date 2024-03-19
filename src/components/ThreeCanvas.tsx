@@ -11,6 +11,7 @@ import { React } from "./models/React";
 import { Css } from "./models/Css";
 import { HtmlModel } from "./models/Html";
 import { Avatar } from "./models/Avatar";
+import { Cs } from "./models/Cs";
 
 const _positionZ =
   window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3;
@@ -51,6 +52,7 @@ const ThreeCanvas = () => {
         <React position={[-1, 0.2, 1]} />
         <Css position={[-1.5, -1.2, -0.8]} />
         <HtmlModel position={[1.8, 0.4, 1.2]} />
+        <Cs position={[-1.5, 0, -1.5]} />
       </Suspense>
     </Canvas>
   );

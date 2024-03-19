@@ -8,10 +8,10 @@ import {
   XIcon,
 } from "../assets/Icons";
 
-const NavBar = () => {
+const FixedContents = () => {
   return (
     <div className="text-2xl xl:text-3xl 2xl:text-4xl text-cyan-400">
-      <div className=" z-10 fixed gap-3 flex sm:left-auto sm:bottom-auto sm:right-0 sm:flex-col sm:top-[50%] sm:-translate-y-[50%] sm:translate-x-0 sm:rounded-r-none sm:border-r-0 sm:border-b-[0.1px] bg-white bg-opacity-10 p-3 sm:rounded-l-md border-[0.1px] border-cyan-300 left-[50%] bottom-0 -translate-x-[50%] border-b-0 rounded-t-md">
+      <div className=" z-10 fixed gap-3 flex right-0 flex-col top-[50%] -translate-y-[50%] rounded-r-none bg-white bg-opacity-10 p-3 rounded-l-md border-[0.1px] border-cyan-300 border-r-0">
         <a
           className="relative"
           href="https://github.com/KhayKhun"
@@ -52,14 +52,6 @@ const NavBar = () => {
           <div className="absolute w-full h-full top-0 left-0 bg-cyan-400 animate-ping rounded-full opacity-100" />
           <FacebookIcon />
         </a>
-        <a
-          className="relative"
-          href="https://github.com/KhayKhun/portfolio"
-          target="blank"
-        >
-          <div className="absolute w-full h-full top-0 left-0 bg-cyan-400 hover:animate-ping rounded-full opacity-0 hover:opacity-100" />
-          <CodeIcon />
-        </a>
       </div>
       <a
         href="https://drive.google.com/uc?export=download&id=1TGK9aCf0mjPPBkgyM-vgXfekTlDhlUv3"
@@ -71,8 +63,18 @@ const NavBar = () => {
           Download CV
         </span>
       </a>
+      <div className="fixed bottom-3 right-3 z-10 text-sm text-amber-500">
+        <a
+          className="flex items-center gap-2"
+          href="https://github.com/KhayKhun/portfolio"
+          target="blank"
+        >
+          <CodeIcon />
+          Source code
+        </a>
+      </div>
     </div>
   );
 };
 
-export default NavBar;
+export default FixedContents;

@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import NavBar from "./components/NavBar";
+import FixedContents from "./components/FixedContents";
 import ThreeCanvas from "./components/ThreeCanvas";
 import { Loader } from "@react-three/drei";
 import AboutMe from "./components/AboutMe";
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
+      <FixedContents />
       <AboutMe/>
       {/* <CustomLoader/> */}
       <Suspense>

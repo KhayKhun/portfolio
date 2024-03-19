@@ -23,7 +23,7 @@ export default function AboutMe() {
 
   return (
     <div
-      className={`mono-font z-10 fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-green-400 font-bold font-mono`}
+      className={`mono-font z-10 fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] text-green-500 font-bold font-mono`}
     >
       <span ref={el} />
     </div>
