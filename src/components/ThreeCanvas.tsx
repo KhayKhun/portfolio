@@ -1,59 +1,45 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Stars} from "@react-three/drei";
-import { Suspense, useState } from "react";
-import { Github } from "./models/Github";
-import { Blender } from "./models/Blender";
-import { Javascript } from "./models/Javascript";
-import { Typescript } from "./models/Typescript";
-import { Tailwind } from "./models/Tailwind";
+import { Suspense } from "react";
+import { Avatar, Blender, Cs, Css, Github, HtmlModel, Javascript, React, Tailwind, Typescript } from "./models/Models";
 import { Lights } from "../assets/Helpers";
-import { React } from "./models/React";
-import { Css } from "./models/Css";
-import { HtmlModel } from "./models/Html";
-import { Avatar } from "./models/Avatar";
-import { Cs } from "./models/Cs";
+import { Vector3 } from "three";
 
 const _positionZ =
   window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3;
 
 const ThreeCanvas = () => {
-  const [modelHeight, setModelHeight] = useState(0);
-
   return (
     <Canvas
-      className="border border-black bg-gradient-to-b from-[#000] to-[#150f1e] w-full h-full"
+      className="border border-black bg-gradient-to-b from-[#000] to-[#010017] w-full h-full"
       camera={{
+        // camera position-z is scaled by viewport width. Mobile uses will see models from furthur position
         position: [0, -1, _positionZ],
         fov: 40,
-        near: 0.5,
+        near: 0.01,
       }}
     >
-      <Stars />
+      <OrbitControls autoRotate rotateSpeed={2} enableZoom={false} />
+
+      {/* Suspense only a few models and lighting */}
       <Suspense>
-        <ambientLight intensity={2} />
-        <OrbitControls
-          autoRotate
-          enableDamping
-          autoRotateSpeed={2}
-          rotateSpeed={2}
-          enableZoom={false}
-          enablePan={false}
-          target={[0.2, -0.2, 0]}
-        />
         <Lights />
+        <Stars />
 
-        <Avatar setHeight={setModelHeight} position={[0, -modelHeight, 0]} />
-
-        <Blender position={[1, 0.8, 1.2]} />
-        <Github position={[1.3, 1.3, -1]} />
-        <Javascript position={[1, -1, -1]} />
-        <Typescript position={[-1, 1, -1]} />
-        <Tailwind position={[1, -1.3, 1]} />
-        <React position={[-1, 0.2, 1]} />
-        <Css position={[-1.5, -1.2, -0.8]} />
-        <HtmlModel position={[1.8, 0.4, 1.2]} />
-        <Cs position={[-1.5, 0, -1.5]} />
+        <Avatar position={new Vector3(0, -1, 0)} />
+        <Blender position={new Vector3(1, 0.8, 1.2)} />
+        <Github position={new Vector3(1.3, 1.3, -1)} />
+        <Javascript position={new Vector3(1, -1, -1)} />
+        <Typescript position={new Vector3(-1, 1, -1)} />
       </Suspense>
+
+      {/* Dont't suspense all models to increase user experience*/}
+      <Tailwind position={new Vector3(1, -1.3, 1)} />
+      <React position={new Vector3(-1, 0.2, 1)} />
+      <Css position={new Vector3(-1.5, -1.2, -0.8)} />
+      <HtmlModel position={new Vector3(1.8, 0.4, 1.2)} />
+      <Cs position={new Vector3(-1.5, 0, -1.5)} />
+
     </Canvas>
   );
 };

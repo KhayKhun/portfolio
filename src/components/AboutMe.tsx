@@ -7,7 +7,7 @@ export default function AboutMe() {
   useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        "Hi!",
+        "Hello, World!",
         "I'm Sai Khay Khun Mong.",
         "Creating bugs since 2022.",
         "<a href='https://www.facebook.com/simpleyourweb'>Like my Facebook page.</a>",

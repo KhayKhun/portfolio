@@ -1,3 +1,4 @@
+import { Vector3 } from "three";
 
 export type GLTFResult = GLTF & {
     nodes: {
@@ -23,3 +24,7 @@ export type GLTFResult = GLTF & {
         Wolf3D_Teeth: THREE.MeshStandardMaterial;
     };
 };
+
+export type GlbModelProps = {
+    position: Vector3
+}
