@@ -19,7 +19,6 @@ const ThreeCanvas = () => {
         near: 0.01,
       }}
     >
-      {/* Suspense only a few models and lighting */}
       <Suspense>
         <Lights />
         <Stars />
