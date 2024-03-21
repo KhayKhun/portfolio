@@ -19,27 +19,23 @@ const ThreeCanvas = () => {
         near: 0.01,
       }}
     >
-      <OrbitControls autoRotate rotateSpeed={2} enableZoom={false} />
-
       {/* Suspense only a few models and lighting */}
       <Suspense>
         <Lights />
         <Stars />
+        <OrbitControls autoRotate rotateSpeed={2} enableZoom={false} />
 
         <Avatar position={new Vector3(0, -1, 0)} />
         <Blender position={new Vector3(1, 0.8, 1.2)} />
         <Github position={new Vector3(1.3, 1.3, -1)} />
         <Javascript position={new Vector3(1, -1, -1)} />
         <Typescript position={new Vector3(-1, 1, -1)} />
+        <Tailwind position={new Vector3(1, -1.3, 1)} />
+        <React position={new Vector3(-1, 0.2, 1)} />
+        <Css position={new Vector3(-1.5, -1.2, -0.8)} />
+        <HtmlModel position={new Vector3(1.8, 0.4, 1.2)} />
+        <Cs position={new Vector3(-1.5, 0, -1.5)} />
       </Suspense>
-
-      {/* Dont't suspense all models to increase user experience*/}
-      <Tailwind position={new Vector3(1, -1.3, 1)} />
-      <React position={new Vector3(-1, 0.2, 1)} />
-      <Css position={new Vector3(-1.5, -1.2, -0.8)} />
-      <HtmlModel position={new Vector3(1.8, 0.4, 1.2)} />
-      <Cs position={new Vector3(-1.5, 0, -1.5)} />
-
     </Canvas>
   );
 };
