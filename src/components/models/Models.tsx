@@ -41,13 +41,12 @@ export function Avatar({position}:GlbModelProps) {
 
   return (
     <group
-      
       dispose={null}
       ref={groupRef}
       rotation-x={-1.8}
       rotation-z={0.9}
       position={position}
-      scale={0.8}
+      scale={0.6}
     >
       <primitive object={nodes.Hips} />
       <skinnedMesh

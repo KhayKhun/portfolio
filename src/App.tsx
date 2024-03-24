@@ -1,7 +1,7 @@
 import FixedContents from "./components/FixedContents";
 import ThreeCanvas from "./components/ThreeCanvas";
-import { Loader } from "@react-three/drei";
 import AboutMe from "./components/AboutMe";
+import CustomLoadingScreen from "./components/CustomLoadingScreen";
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
       <AboutMe />
 
       {/* Show loading at the start */}
-      <Loader />
+      <CustomLoadingScreen/>
     </div>
   );
 }
