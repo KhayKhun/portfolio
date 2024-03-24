@@ -142,64 +142,59 @@ export function Blender({position}:GlbModelProps) {
       position={position}
       scale={3}
       ref={groupRef}
-    >
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.back.geometry}
-          material={materials["back.001"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.LOGO.geometry}
-          material={materials["logo.001"]}
-          position={[0.899, 0.649, 0.334]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.LOGO_1.geometry}
-          material={materials.logo_1}
-          position={[0.031, 0.649, 0.025]}
-        />
-      </group>
+    >      <group position={[-0.003, 0.012, -0.004]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+    <mesh
+      castShadow
+      receiveShadow
+      geometry={nodes.back001.geometry}
+      material={materials['back.003']}
+    />
+    <mesh
+      castShadow
+      receiveShadow
+      geometry={nodes.LOGO001.geometry}
+      material={materials['logo.003']}
+      position={[0.899, 0.649, 0.334]}
+    />
+    <mesh
+      castShadow
+      receiveShadow
+      geometry={nodes.LOGO_1.geometry}
+      material={materials['logo_1.001']}
+      position={[0.031, 0.649, 0.025]}
+    />
+  </group>
     </group>
   );
 }
-
 export function Cs({position}:GlbModelProps) {
   const { nodes, materials } = useGLTF("models/cs.glb") as GLTFResult;
   const groupRef = useRef<any>();
   useFrame(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.03;
-      groupRef.current.rotation.z += 0.03;
     }
   });
   return (
     <group
-      
-      dispose={null}
-      ref={groupRef}
-      rotation-x={-1.8}
-      rotation-z={0.9}
-      position={position}
-      scale={3}
-    >
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+    dispose={null}
+    ref={groupRef}
+    rotation-x={-1.8}
+    rotation-z={0.9}
+    position={position}
+    scale={3}>
+      <group position={[0.157, 0.13, 0.022]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.back.geometry}
-          material={materials.back}
+          material={materials['back.002']}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.LOGO.geometry}
-          material={materials.logo}
+          material={materials['logo.002']}
           position={[1.05, 0.556, 0.006]}
         />
         <mesh
@@ -211,7 +206,7 @@ export function Cs({position}:GlbModelProps) {
         />
       </group>
     </group>
-  );
+  )
 }
 
 export function Css({position}:GlbModelProps) {
@@ -352,41 +347,32 @@ export function HtmlModel({position}:GlbModelProps) {
     </group>
   );
 }
-
 export function Javascript({position}:GlbModelProps) {
   const { nodes, materials } = useGLTF("models/js.glb") as GLTFResult;
   const groupRef = useRef<any>();
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.03;
+      groupRef.current.rotation.y += 0.01;
       groupRef.current.rotation.x += 0.01;
     }
   });
   return (
     <group
-      
-      dispose={null}
-      position={position}
-      scale={3}
-      ref={groupRef}
-    >
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+    dispose={null}
+    position={position}
+    scale={3}
+    ref={groupRef}>
+      <group position={[0.243, 0.086, -0.082]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.back.geometry}
-          material={materials.back}
+          material={materials['Material.001']}
         />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.LOGO.geometry}
-          material={materials.logo}
-          position={[0.534, 0.4, 0.996]}
-        />
+        <mesh castShadow receiveShadow geometry={nodes.LOGO.geometry} material={materials.logo} />
       </group>
     </group>
-  );
+  )
 }
 
 export function React({position}:GlbModelProps) {
@@ -394,30 +380,29 @@ export function React({position}:GlbModelProps) {
   const groupRef = useRef<any>();
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y -= 0.05;
-      groupRef.current.rotation.z += 0.01;
+      groupRef.current.rotation.y -= 0.02;
       groupRef.current.rotation.x += 0.01;
     }
   });
   return (
     <group position={position} dispose={null} ref={groupRef} scale={3}>
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+      <group position={[0.026, 0.032, 0.015]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.back.geometry}
-          material={materials["back.004"]}
+          material={materials['back.006']}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.LOGO.geometry}
-          material={materials["logo.004"]}
+          material={materials['logo.006']}
           position={[-0.003, 0.648, 0.006]}
         />
       </group>
     </group>
-  );
+  )
 }
 
 export function Tailwind({position}:GlbModelProps) {
@@ -425,8 +410,8 @@ export function Tailwind({position}:GlbModelProps) {
   const groupRef = useRef<any>();
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y -= 0.05;
-      groupRef.current.rotation.z -= 0.03;
+      groupRef.current.rotation.y -= 0.01;
+      groupRef.current.rotation.z -= 0.01;
     }
   });
   return (
@@ -437,25 +422,24 @@ export function Tailwind({position}:GlbModelProps) {
       scale={3}
       ref={groupRef}
     >
-      <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.back.geometry}
-          material={materials["back.003"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.LOGO.geometry}
-          material={materials["logo.003"]}
-          position={[-0.003, 0.657, 0.009]}
-        />
-      </group>
+    <group position={[0.136, 0.111, -0.002]} rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.back.geometry}
+        material={materials['back.001']}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.LOGO.geometry}
+        material={materials['logo.001']}
+        position={[-0.003, 0.657, 0.009]}
+      />
+    </group>
     </group>
   );
 }
-
 export function Typescript({position}:GlbModelProps) {
   const { nodes, materials } = useGLTF("models/ts.glb") as GLTFResult;
   const groupRef = useRef<any>();
@@ -467,28 +451,26 @@ export function Typescript({position}:GlbModelProps) {
     }
   });
   return (
-    <group
-      
-      dispose={null}
-      position={position}
-      scale={3}
-      ref={groupRef}
-    >
+    <group 
+    dispose={null}
+    position={position}
+    scale={3}
+    ref={groupRef}>
       <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.back.geometry}
-          material={materials["back.002"]}
+          material={materials['back.005']}
         />
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.LOGO.geometry}
-          material={materials["logo.002"]}
+          material={materials['logo.005']}
           position={[0.534, 0.644, 0.996]}
         />
       </group>
     </group>
-  );
+  )
 }

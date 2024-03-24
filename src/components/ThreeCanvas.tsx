@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { Avatar, Blender, Cs, Css, Github, HtmlModel, Javascript, React, Tailwind, Typescript } from "./models/Models";
 import { Lights } from "../assets/Helpers";
 import { Vector3 } from "three";
-
+import {Perf} from 'r3f-perf'
 const _positionZ =
   window.innerWidth < 400 ? 5 : window.innerWidth < 600 ? 4 : 3;
 
@@ -19,7 +19,9 @@ const ThreeCanvas = () => {
         near: 0.01,
       }}
     >
+      <Perf/>
       <Suspense>
+
         <Lights />
         <Stars />
         <OrbitControls autoRotate rotateSpeed={2} enableZoom={false} />
