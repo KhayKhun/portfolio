@@ -10,7 +10,7 @@ export default function AboutMe() {
         "Hello, World!",
         "I'm Sai Khay Khun Mong.",
         "Creating bugs since 2022.",
-        "<a href='https://www.facebook.com/simpleyourweb'>Like my Facebook page.</a>",
+        "OKAY NR SR ;)",
       ],
       typeSpeed: 50,
       loop: true,
