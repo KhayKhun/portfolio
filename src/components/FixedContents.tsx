@@ -53,16 +53,6 @@ const FixedContents = () => {
           <FacebookIcon />
         </a>
       </div>
-      <a
-        href="https://drive.google.com/uc?export=download&id=1_Yd_MRnHvLvHOx9s50_k_TOxhn7fqIFj"
-        className="z-10 fixed gap-2 flex sm:left-0 sm:-translate-x-[40%] sm:top-[50%] sm:-translate-y-[50%] sm:border-b-0 bg-white bg-opacity-10 p-2 sm:rounded-t-md sm:border-[0.1px] border-cyan-300 sm:rotate-90 top-0 left-[50%] -translate-x-[50%] border-t-0 rounded-b-md border-[0.1px]"
-      >
-        <div className="absolute w-full h-full top-0 left-0 bg-cyan-400 hover:animate-ping rounded-md opacity-0 hover:opacity-100" />
-        <FileDownloadIcon />
-        <span className="text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-3xl">
-          Download CV
-        </span>
-      </a>
       <div className="fixed bottom-3 right-3 z-10 text-sm text-amber-500">
         <a
           className="flex items-center gap-2"
