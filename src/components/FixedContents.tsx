@@ -1,7 +1,6 @@
 import {
   CodeIcon,
   FacebookIcon,
-  FileDownloadIcon,
   GithubIcon,
   LeetcodeIcon,
   LinkedinIcon,
